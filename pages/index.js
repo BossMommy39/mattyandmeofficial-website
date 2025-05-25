@@ -35,7 +35,7 @@ export default function Home() {
               <div className="flex items-center">
                 <a href="#" className="flex items-center">
                   <img 
-  src="/matty-me-logo.png" 
+  src="/MattyandMeWebsiteLogo.png" 
   alt="Matty & Me Logo" 
   className="w-12 h-12 mr-3"
 />
@@ -295,7 +295,7 @@ export default function Home() {
               <div className="flex items-center justify-center mb-6">
                 <a href="#" className="flex items-center">
                  <img 
-  src="/matty-me-logo.png" 
+  src="/MattyandMeWebsiteLogo.png" 
   alt="Matty & Me Logo" 
   className="w-12 h-12 mr-3"
 />
