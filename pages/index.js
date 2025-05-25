@@ -50,14 +50,14 @@ export default function Home() {
                 <a href="#demo" className="text-gray-700 hover:text-blue-700 font-medium">Demo</a>
                 <a href="#community" className="text-gray-700 hover:text-blue-700 font-medium">Community</a>
                 <a 
-                  href="https://mattyandme9fficial.etsy.com" 
+                  href="https://mattyandmeofficial.etsy.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white px-4 py-2 rounded-full font-bold flex items-center transition-colors"
                   style={{ backgroundColor: '#214179' }}
                 >
                   <ShoppingBag className="w-4 h-4 mr-2" />
-                  Shop Stickers
+                  Shop Merch
                 </a>
               </div>
             </div>
@@ -311,7 +311,7 @@ export default function Home() {
               
               <div className="flex justify-center space-x-6 mb-6">
                 <a 
-                  href="https://mattyandme9fficial.etsy.com" 
+                  href="https://mattyandmeofficial.etsy.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="px-6 py-3 rounded-full font-bold text-white transition-colors"
