@@ -34,9 +34,11 @@ export default function Home() {
             <div className="flex justify-between items-center py-4">
               <div className="flex items-center">
                 <a href="#" className="flex items-center">
-                  <div className="w-12 h-12 mr-3 bg-white rounded-full flex items-center justify-center">
-                    <span className="text-2xl">🦦🦦</span>
-                  </div>
+                  <img 
+  src="/matty-me-logo.png" 
+  alt="Matty & Me Logo" 
+  className="w-12 h-12 mr-3"
+/>
                   <div>
                     <div className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Montserrat, sans-serif' }}>MATTY & ME</div>
                     <div className="text-xs text-gray-600 uppercase tracking-wide">Official Chaos</div>
@@ -292,9 +294,11 @@ export default function Home() {
             <div className="text-center">
               <div className="flex items-center justify-center mb-6">
                 <a href="#" className="flex items-center">
-                  <div className="w-12 h-12 mr-3 rounded-full flex items-center justify-center" style={{ backgroundColor: '#f5f3f0' }}>
-                    <span className="text-2xl">🦦🦦</span>
-                  </div>
+                 <img 
+  src="/matty-me-logo.png" 
+  alt="Matty & Me Logo" 
+  className="w-12 h-12 mr-3"
+/>
                   <div>
                     <div className="text-2xl font-bold" style={{ fontFamily: 'Montserrat, sans-serif', color: '#826753' }}>MATTY & ME</div>
                     <div className="text-xs uppercase tracking-wide" style={{ color: '#826753' }}>AI + Chaos = Brilliance</div>
