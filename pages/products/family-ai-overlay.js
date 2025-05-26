@@ -165,11 +165,23 @@ export default function ProductPage() {
   return (
     <>
       <Head>
-        <title>MattyIRL Family AI System - Evidence-Based Protocols by Dr. Ann</title>
-        <meta name="description" content="Clinically-validated family AI protocols. Transform ChatGPT into a family-aware assistant with evidence-based setup by Dr. Ann, PharmD." />
+        <title>MattyIRL Family AI System - Evidence-Based Protocols</title>
+        <meta name="description" content="Clinically-validated family AI protocols. Transform ChatGPT into a family-aware assistant with evidence-based setup by healthcare professionals." />
       </Head>
 
       <div className="min-h-screen bg-white">
+        {/* Back Button */}
+        <div className="bg-[#f5f1eb] px-6 py-4">
+          <div className="max-w-6xl mx-auto">
+            <a 
+              href="/"
+              className="inline-flex items-center gap-2 text-[#214179] hover:text-[#826753] transition-colors font-medium"
+            >
+              <span>←</span> Back to Home
+            </a>
+          </div>
+        </div>
+        
         {/* Hero Section */}
         <section className="bg-gradient-to-b from-[#f5f1eb] to-white py-20">
           <div className="max-w-6xl mx-auto px-6">
@@ -181,7 +193,7 @@ export default function ProductPage() {
                 Evidence-based protocols for family AI integration
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Developed by <strong>Dr. Ann</strong> (PharmD, published researcher) • Field-tested with 200+ families
+                Developed by healthcare professionals with academic and research experience • Real family testing since 2024
               </p>
               
               {/* Progress Indicator */}
@@ -609,7 +621,8 @@ export default function ProductPage() {
             </div>
           </div>
         </section>
-{/* Pricing Modal */}
+
+        {/* Pricing Modal */}
         {showPricing && isValid() && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
             <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
@@ -655,7 +668,7 @@ export default function ProductPage() {
                         <span className="text-green-600">✓</span>
                         <span>Free script updates (3 months)</span>
                       </li>
-                    </ul>
+         </ul>
 
                     <button className="w-full bg-[#214179] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#826753] transition-colors">
                       Get Started - $20
@@ -694,7 +707,7 @@ export default function ProductPage() {
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-green-600">✓</span>
-                        <span>Monthly group strategy calls with Dr. Ann</span>
+                        <span>Monthly group strategy calls with healthcare professionals</span>
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="text-green-600">✓</span>
@@ -732,32 +745,30 @@ export default function ProductPage() {
         <section className="bg-gray-50 py-16">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <h2 className="text-3xl font-bold text-[#826753] mb-8">
-              Developed by Dr. Ann - Published Researcher & Family AI Pioneer
+              Built by Real Families Who Needed AI That Actually Gets It
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="bg-white rounded-lg p-6">
-                <div className="text-2xl font-bold text-[#214179] mb-2">5+ Months</div>
-                <p className="text-gray-600">Real-world family testing & iteration</p>
-              </div>
-              <div className="bg-white rounded-lg p-6">
-                <div className="text-2xl font-bold text-[#214179] mb-2">200+ Families</div>
-                <p className="text-gray-600">Field-tested across diverse households</p>
+                <div className="text-2xl font-bold text-[#214179] mb-2">6+ Months</div>
+                <p className="text-gray-600">Real neurospicy family collaboration with AI</p>
               </div>
               <div className="bg-white rounded-lg p-6">
                 <div className="text-2xl font-bold text-[#214179] mb-2">31 Iterations</div>
-                <p className="text-gray-600">Refined through systematic testing</p>
+                <p className="text-gray-600">Refined through daily family chaos</p>
+              </div>
+              <div className="bg-white rounded-lg p-6">
+                <div className="text-2xl font-bold text-[#214179] mb-2">Evidence-Based</div>
+                <p className="text-gray-600">Grounded in clinical research, not AI hype</p>
               </div>
             </div>
 
             <div className="bg-white rounded-lg p-8 max-w-2xl mx-auto">
               <blockquote className="text-lg text-gray-700 italic mb-4">
-                "I applied my clinical research training to develop the first evidence-based 
-                protocols for family AI integration. This isn't theory - it's systematic 
-                methodology applied to real family dynamics."
+                "We applied clinical research principles to solve a real problem: how do you make AI actually understand neurospicy families? After 6+ months of daily use with our own kids, we built the system we wish we'd had from day one."
               </blockquote>
               <div className="text-sm text-gray-600">
-                <strong>Dr. Ann</strong> - PharmD, Former Assistant Professor, Published Researcher
+                <strong>The Matty & Me Team</strong> - Healthcare professionals, researchers, and neurospicy family advocates
               </div>
             </div>
           </div>
@@ -798,7 +809,7 @@ export default function ProductPage() {
         <footer className="bg-[#f5f1eb] py-8">
           <div className="max-w-4xl mx-auto px-6 text-center">
             <p className="text-gray-600 mb-2">
-              Built by <strong>Dr. Ann</strong> (PharmD, published researcher) • Evidence-based family AI protocols
+              Built by healthcare professionals with academic and research experience • Evidence-based family AI protocols
             </p>
             <p className="text-sm text-gray-500">
               Zero engagement theater. Real results. Field-tested technology, not startup promises.
