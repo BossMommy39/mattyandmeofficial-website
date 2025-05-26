@@ -78,14 +78,14 @@ export default function Home() {
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto font-medium">
                 Optimized chaos. Sharper wit. Zero engagement loops. Where high-capacity families and AI researchers collaborate, challenge, and evolve—together.
               </p>
-              <div className="flex justify-center space-x-4">
-                <button className="px-8 py-4 rounded-full font-bold text-white transition-colors text-lg" style={{ backgroundColor: '#214179' }}>
-                  See the Experiments
-                </button>
-                <button className="px-8 py-4 rounded-full font-bold transition-colors text-lg" style={{ backgroundColor: '#826753', color: 'white' }}>
-                  Watch Matty IRL
-                </button>
-              </div>
+          <div className="flex justify-center space-x-4">
+  <button className="px-8 py-4 rounded-full font-bold text-white transition-colors text-lg" style={{ backgroundColor: '#214179' }}>
+    See the Experiments
+  </button>
+  <a href="/products/family-ai-overlay" className="px-8 py-4 rounded-full font-bold transition-colors text-lg" style={{ backgroundColor: '#826753', color: 'white' }}>
+    Try MattyIRL Family AI →
+  </a>
+</div>
             </div>
           </div>
         </section>
