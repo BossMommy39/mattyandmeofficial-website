@@ -78,14 +78,14 @@ export default function Home() {
               <p className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto font-medium">
                 Optimized chaos. Sharper wit. Zero engagement loops. Where high-capacity families and AI researchers collaborate, challenge, and evolve—together.
               </p>
-          <div className="flex justify-center space-x-4">
-  <button className="px-8 py-4 rounded-full font-bold text-white transition-colors text-lg" style={{ backgroundColor: '#214179' }}>
-    See the Experiments
-  </button>
-  <a href="/products/family-ai-overlay" className="px-8 py-4 rounded-full font-bold transition-colors text-lg" style={{ backgroundColor: '#826753', color: 'white' }}>
-    Try MattyIRL Family AI →
-  </a>
-</div>
+              <div className="flex justify-center space-x-4">
+                <a href="/products/family-ai-overlay" className="px-8 py-4 rounded-full font-bold text-white transition-colors text-lg" style={{ backgroundColor: '#214179' }}>
+                  Try MattyIRL Family AI →
+                </a>
+                <a href="/neurospicy-ai" className="px-8 py-4 rounded-full font-bold transition-colors text-lg" style={{ backgroundColor: '#826753', color: 'white' }}>
+                  Family Intelligence File →
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -182,26 +182,27 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Matty IRL Demo */}
+        {/* Advanced AI Builder Section */}
         <section id="demo" className="py-16 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-black text-center mb-4" style={{ fontFamily: 'Montserrat, sans-serif', color: '#826753' }}>
-              MATTY IRL DEMO
+              ADVANCED AI BUILDER
             </h2>
-            <p className="text-center text-gray-600 mb-12 text-lg">See the chaos in action</p>
+            <p className="text-center text-gray-600 mb-12 text-lg">For the tinkerers and system builders</p>
             
             <div className="bg-white p-8 rounded-lg shadow-sm">
               <div className="text-center mb-6">
                 <div className="h-64 rounded-lg flex items-center justify-center mb-4 border-2 border-dashed" style={{ borderColor: '#d2c2b2' }}>
                   <div className="text-center">
-                    <div className="text-6xl mb-4">🦦🤖</div>
-                    <p className="text-gray-600 font-medium">Interactive Demo Sandbox</p>
-                    <p className="text-sm text-gray-500 mt-2">Coming Soon: Live Matty Integration</p>
+                    <div className="text-6xl mb-4">🔧🤖</div>
+                    <p className="text-gray-600 font-medium text-xl">Build Your Own AI System</p>
+                    <p className="text-lg text-gray-500 mt-2">Coming Soon: Docker-based family AI stack</p>
+                    <p className="text-sm text-gray-400 mt-4">Complete technical guide + local deployment tools</p>
                   </div>
                 </div>
                 <p className="text-gray-700 mb-4">
-                  See how Matty handles real family scenarios: party planning, homework coordination, 
-                  and complex decision-making with multiple family members. No sugar-coating.
+                  Want full control? Build your own neurospicy family AI system from the ground up. 
+                  Complete with Docker deployment, local privacy, and advanced customization options.
                 </p>
                 <button 
                   onClick={() => setShowDeepDive(!showDeepDive)}
@@ -209,32 +210,39 @@ export default function Home() {
                   style={{ color: '#214179', backgroundColor: '#d2c2b2' }}
                 >
                   {showDeepDive ? <ChevronDown className="w-4 h-4 mr-1" /> : <ChevronRight className="w-4 h-4 mr-1" />}
-                  Technical Deep Dive (For the Nerds)
+                  Technical Preview (For the Builders)
                 </button>
               </div>
               
               {showDeepDive && (
                 <div className="border-t pt-6 mt-6" style={{ borderColor: '#d2c2b2' }}>
-                  <h4 className="font-bold mb-4 text-lg">TECHNICAL SPECIFICATIONS</h4>
+                  <h4 className="font-bold mb-4 text-lg">COMING SOON: COMPLETE BUILD GUIDE</h4>
                   <div className="grid md:grid-cols-2 gap-6 text-sm text-gray-700">
                     <div>
-                      <h5 className="font-bold mb-2" style={{ color: '#214179' }}>ARCHITECTURE:</h5>
+                      <h5 className="font-bold mb-2" style={{ color: '#214179' }}>WHAT YOU'LL GET:</h5>
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Multi-session memory persistence</li>
-                        <li>Context handoff protocols</li>
-                        <li>Drift detection algorithms</li>
-                        <li>Performance theater prevention</li>
+                        <li>Complete Docker deployment stack</li>
+                        <li>Local AI model integration</li>
+                        <li>Privacy-first architecture</li>
+                        <li>Advanced family context engines</li>
+                        <li>Custom neurotype protocols</li>
                       </ul>
                     </div>
                     <div>
-                      <h5 className="font-bold mb-2" style={{ color: '#214179' }}>CAPABILITIES:</h5>
+                      <h5 className="font-bold mb-2" style={{ color: '#214179' }}>FOR DEVELOPERS WHO:</h5>
                       <ul className="list-disc list-inside space-y-1">
-                        <li>Complex project orchestration</li>
-                        <li>Multi-stakeholder decision support</li>
-                        <li>Real-time protocol adaptation</li>
-                        <li>Failure logging and iteration</li>
+                        <li>Want complete system control</li>
+                        <li>Need enterprise-level privacy</li>
+                        <li>Love building from source</li>
+                        <li>Want to contribute to the project</li>
+                        <li>Believe in open-source family tech</li>
                       </ul>
                     </div>
+                  </div>
+                  <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                    <p className="text-sm text-gray-600 italic">
+                      📧 Want early access? Join our research community below to get notified when the builder guide drops.
+                    </p>
                   </div>
                 </div>
               )}
