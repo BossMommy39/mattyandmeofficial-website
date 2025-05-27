@@ -626,3 +626,75 @@ export default function ProductPage() {
             </div>
           </div>
         </section>
+{/* FAQ Section */}
+        <section className="max-w-3xl mx-auto px-6 py-12">
+          <h2 className="text-2xl font-bold text-[#826753] mb-8 text-center">Quick Questions</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-white border rounded-lg p-4">
+              <h3 className="font-semibold text-[#214179] mb-2 text-sm">Do I need ChatGPT Plus?</h3>
+              <p className="text-gray-700 text-xs">ChatGPT Plus works best, but the free version works too. We include setup instructions for both.</p>
+            </div>
+            <div className="bg-white border rounded-lg p-4">
+              <h3 className="font-semibold text-[#214179] mb-2 text-sm">What if this doesn't work for my family?</h3>
+              <p className="text-gray-700 text-xs">30-day money-back guarantee, no questions asked. Some families need different approaches.</p>
+            </div>
+            <div className="bg-white border rounded-lg p-4">
+              <h3 className="font-semibold text-[#214179] mb-2 text-sm">How is this different from regular ChatGPT?</h3>
+              <p className="text-gray-700 text-xs">Regular ChatGPT gives generic advice. These magic words make it understand YOUR specific child.</p>
+            </div>
+            <div className="bg-white border rounded-lg p-4">
+              <h3 className="font-semibold text-[#214179] mb-2 text-sm">Is this safe for my child?</h3>
+              <p className="text-gray-700 text-xs">Built-in safety guidelines ensure age-appropriate responses. Adult supervision recommended for young children.</p>
+            </div>
+            <div className="bg-white border rounded-lg p-4">
+              <h3 className="font-semibold text-[#214179] mb-2 text-sm">Can I add more family members later?</h3>
+              <p className="text-gray-700 text-xs">Absolutely! The magic words can be easily customized for siblings and other family members.</p>
+            </div>
+            <div className="bg-white border rounded-lg p-4">
+              <h3 className="font-semibold text-[#214179] mb-2 text-sm">How quickly will I get my magic words?</h3>
+              <p className="text-gray-700 text-xs">Instant delivery to your email within 5 minutes of purchase. Check spam folder if needed.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA Section */}
+        {isMinimalFormValid() && !showDemo && !showPurchase && (
+          <section className="bg-[#214179] py-12">
+            <div className="max-w-2xl mx-auto px-6 text-center">
+              <h2 className="text-2xl font-bold text-white mb-4">
+                Ready to see your first Magic Word?
+              </h2>
+              <p className="text-blue-100 mb-6">
+                You've completed the setup for {familyName}. Let's show you how ChatGPT will understand {childName} perfectly.
+              </p>
+              <button
+                onClick={() => {
+                  setDemoMagicWord(generateDemoPrompt());
+                  setShowDemo(true);
+                }}
+                className="bg-[#826753] text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-white hover:text-[#214179] transition-colors"
+              >
+                🪄 Generate My Magic Word
+              </button>
+            </div>
+          </section>
+        )}
+
+        {/* Footer */}
+        <footer className="bg-[#f5f1eb] py-8">
+          <div className="max-w-4xl mx-auto px-6 text-center">
+            <p className="text-gray-600 mb-2">
+              Built by healthcare professionals and neurospicy family advocates
+            </p>
+            <p className="text-sm text-gray-500 mb-3">
+              Real solutions for real families. No AI hype, just what works.
+            </p>
+            <p className="text-xs text-gray-500">
+              Questions? Email us at <a href="mailto:HQ@mattyandmeofficial.com" className="text-[#214179] hover:underline">HQ@mattyandmeofficial.com</a>
+            </p>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+}
