@@ -316,6 +316,27 @@ export default function ProductPage() {
     }
   }, [email, family, isValid]);
 
+  // NEW: Handle PayPal button rendering
+  const renderPayPalButton = useCallback((containerId) => {
+    // Wait for PayPal SDK to load
+    if (typeof window !== 'undefined' && window.paypal) {
+      window.paypal.HostedButtons({
+        hostedButtonId: "7GJ7VPHQRQA26",
+      }).render(`#${containerId}`);
+    }
+  }, []);
+
+  // Render PayPal button when pricing modal opens
+  useEffect(() => {
+    if (showPricing && typeof window !== 'undefined' && window.paypal) {
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        renderPayPalButton('paypal-container-basic');
+        renderPayPalButton('paypal-container-premium');
+      }, 100);
+    }
+  }, [showPricing, renderPayPalButton]);
+
   const completion = getCompletionPercentage();
 
   return (
@@ -323,6 +344,7 @@ export default function ProductPage() {
       <Head>
         <title>MattyIRL Family AI System - Evidence-Based Protocols</title>
         <meta name="description" content="Clinically-validated family AI protocols. Transform ChatGPT into a family-aware assistant with evidence-based setup by healthcare professionals." />
+        <script src="https://www.paypal.com/sdk/js?client-id=BAA2JOb3DyIGnXMD1ohWNhAvgM2eUkSZLi8b1AZ2BuzaW0jzFr6riJ7Ex6Fj2RmsL_wzXzLt6lob4H1vYk&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
       </Head>
 
       <div className="min-h-screen bg-white">
