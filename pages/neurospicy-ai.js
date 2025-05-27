@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';       
 import Head from 'next/head';  
 
 // Magic Words System - moved from separate file
@@ -536,3 +536,5 @@ export default function ProductPage() {
             </div>
           </div>
         )}
+// Force deployment - version 1.1
+import { useState, useEffect, useCallback } from 'react';
