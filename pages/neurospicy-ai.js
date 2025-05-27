@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import Head from 'next/head';
+import Head from 'next/head';  
 
 // Magic Words System - moved from separate file
 const MAGIC_WORDS = [
