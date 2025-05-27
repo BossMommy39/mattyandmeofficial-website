@@ -307,14 +307,34 @@ export default function ProductPage() {
     }
   }, [demoMagicWord]);
 
-  // NEW: Handle email collection
-  const handleEmailSubmit = useCallback(() => {
+  // NEW: Handle email collection and webhook
+  const handleEmailSubmit = useCallback(async () => {
     if (email && isValid()) {
-      setEmailCollected(true);
-      // TODO: Send email to webhook/backend
-      console.log('Email collected:', email, 'for family:', family.name);
+      try {
+        // Send to Zapier webhook
+        await fetch('https://hooks.zapier.com/hooks/catch/23096761/2jkcn6g/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            family_name: family.name,
+            timestamp: new Date().toISOString(),
+            family_script: buildScript(),
+            family_data: JSON.stringify(family)
+          })
+        });
+        
+        setEmailCollected(true);
+        console.log('Email sent to Zapier successfully');
+      } catch (error) {
+        console.error('Error sending to Zapier:', error);
+        // Still allow them to copy the script even if webhook fails
+        setEmailCollected(true);
+      }
     }
-  }, [email, family, isValid]);
+  }, [email, family, isValid, buildScript]);
 
   // NEW: Handle PayPal button rendering
   const renderPayPalButton = useCallback((containerId) => {
@@ -348,14 +368,14 @@ export default function ProductPage() {
       </Head>
 
       <div className="min-h-screen bg-white">
-        {/* Back Button */}
-        <div className="bg-[#f5f1eb] px-6 py-4">
+        {/* Back Button - Enhanced Visibility */}
+        <div className="bg-[#f5f1eb] px-6 py-4 border-b border-[#d2c2b2]">
           <div className="max-w-6xl mx-auto">
             <a 
               href="/"
-              className="inline-flex items-center gap-2 text-[#214179] hover:text-[#826753] transition-colors font-medium"
+              className="inline-flex items-center gap-2 text-[#214179] hover:text-[#826753] transition-colors font-medium text-lg"
             >
-              <span>←</span> Back to Home
+              <span className="text-xl">←</span> Back to Home
             </a>
           </div>
         </div>
