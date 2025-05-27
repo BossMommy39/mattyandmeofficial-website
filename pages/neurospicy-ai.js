@@ -3,7 +3,6 @@ import Head from 'next/head';
 
 // Complete Magic Words System - All 15 Magic Words
 const MAGIC_WORDS = [
-  // Daily Operations
   {
     id: "homework_battle",
     name: "Homework battle",
@@ -49,8 +48,6 @@ const MAGIC_WORDS = [
     keyPrinciples: ["advance warnings", "visual timers", "engaging alternatives ready", "co-regulation during transitions"],
     avoidStrategies: ["sudden device removal", "guilt about screen time", "battles without alternatives", "inconsistent limits"]
   },
-  
-  // Emotional Regulation
   {
     id: "meltdown_mode",
     name: "Meltdown mode", 
@@ -96,8 +93,6 @@ const MAGIC_WORDS = [
     keyPrinciples: ["reduce sensory input immediately", "provide calm space", "use sensory tools", "minimal talking", "respect sensory needs"],
     avoidStrategies: ["adding more stimulation", "forcing participation", "dismissing sensory needs", "overwhelming with help"]
   },
-
-  // Social & Behavioral  
   {
     id: "sibling_war",
     name: "Sibling war",
@@ -232,7 +227,6 @@ const VALUES = [
   "Kindness above all", "Effort over perfection", "Creativity & imagination", "Family teamwork",
   "Independence & self-reliance", "Humor fixes everything", "Structure & consistency", "Individual expression"
 ];
-
 export default function ProductPage() {
   const [family, setFamily] = useState({
     name: "",
@@ -241,9 +235,7 @@ export default function ProductPage() {
     vibe: "",
     members: [],
     values: [],
-    challenges: [],
-    boundaries: [],
-    customBoundary: "",
+    challenges: []
   });
 
   const [currentMember, setCurrentMember] = useState({ 
@@ -252,8 +244,6 @@ export default function ProductPage() {
   const [adding, setAdding] = useState(false);
   const [copied, setCopied] = useState(false);
   const [showPricing, setShowPricing] = useState(false);
-  
-  // Magic Word states
   const [email, setEmail] = useState("");
   const [emailCollected, setEmailCollected] = useState(false);
   const [showMagicWordDemo, setShowMagicWordDemo] = useState(false);
@@ -347,10 +337,8 @@ export default function ProductPage() {
     return script;
   }, [family, isValid, getYoungestAge]);
 
-  // Generate demo magic word
   const generateDemoMagicWord = useCallback(() => {
     if (!isValid()) return "Complete your family profile to see the magic word demo...";
-    
     const homeworkWord = MAGIC_WORDS.find(w => w.id === "homework_battle");
     return generateMagicWordPrompt(homeworkWord, family);
   }, [family, isValid]);
@@ -372,7 +360,6 @@ export default function ProductPage() {
     }
   }, [buildScript]);
 
-  // Copy magic word demo
   const copyMagicWord = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(demoMagicWord);
@@ -390,11 +377,9 @@ export default function ProductPage() {
     }
   }, [demoMagicWord]);
 
-  // Handle email collection and webhook
   const handleEmailSubmit = useCallback(async () => {
     if (email && isValid()) {
       try {
-        // Send to Zapier webhook
         await fetch('https://hooks.zapier.com/hooks/catch/23096761/2jkcn6g/', {
           method: 'POST',
           headers: {
@@ -408,20 +393,16 @@ export default function ProductPage() {
             family_data: JSON.stringify(family)
           })
         });
-        
         setEmailCollected(true);
         console.log('Email sent to Zapier successfully');
       } catch (error) {
         console.error('Error sending to Zapier:', error);
-        // Still allow them to copy the script even if webhook fails
         setEmailCollected(true);
       }
     }
   }, [email, family, isValid, buildScript]);
 
-  // Handle PayPal button rendering
   const renderPayPalButton = useCallback((containerId) => {
-    // Wait for PayPal SDK to load
     if (typeof window !== 'undefined' && window.paypal) {
       window.paypal.HostedButtons({
         hostedButtonId: "7GJ7VPHQRQA26",
@@ -429,10 +410,8 @@ export default function ProductPage() {
     }
   }, []);
 
-  // Render PayPal button when pricing modal opens
   useEffect(() => {
     if (showPricing && typeof window !== 'undefined' && window.paypal) {
-      // Small delay to ensure DOM is ready
       setTimeout(() => {
         renderPayPalButton('paypal-container-basic');
       }, 100);
@@ -476,7 +455,6 @@ export default function ProductPage() {
                 Developed by healthcare professionals with academic and research experience • Real family testing since 2024
               </p>
               
-              {/* Progress Indicator */}
               <div className="max-w-md mx-auto">
                 <div className="bg-gray-200 rounded-full h-3 mb-2">
                   <div 
@@ -488,7 +466,6 @@ export default function ProductPage() {
               </div>
             </div>
 
-            {/* Before/After Comparison */}
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white/70 rounded-lg p-6 border-l-4 border-red-400">
                 <h3 className="text-xl font-semibold text-[#214179] mb-4">❌ Generic ChatGPT:</h3>
@@ -629,7 +606,7 @@ export default function ProductPage() {
                           >
                             <div className="text-2xl mb-2">{vibe.emoji}</div>
                             <div className="font-semibold">{vibe.label}</div>
-<div className="text-sm opacity-75">{vibe.desc}</div>
+                            <div className="text-sm opacity-75">{vibe.desc}</div>
                           </button>
                         ))}
                       </div>
@@ -649,8 +626,7 @@ export default function ProductPage() {
                     </div>
                   </div>
                 </div>
-
-                {/* Family Members Section */}
+{/* Family Members Section */}
                 <div className="mb-8">
                   <h3 className="text-xl font-semibold text-[#214179] mb-4 border-b-2 border-[#826753] pb-2">
                     Family Members *
@@ -1148,7 +1124,7 @@ export default function ProductPage() {
                       </div>
                     </div>
                     <p className="text-xs text-gray-600 mt-4">
-                      <strong>Need help?</strong> Email us at HQ@mattyandmeofficial.com
+                      <strong>Need help?</strong> Email us at support@mattyandmeofficial.com
                     </p>
                   </div>
                 </div>
@@ -1215,8 +1191,6 @@ export default function ProductPage() {
               <p className="text-gray-700 text-sm">The $67 package includes complete Docker setup for families who want full data privacy and control. Requires basic technical comfort.</p>
             </div>
             <div className="bg-white border rounded-lg p-6">
-              <h3 className="font-semibold text-[#214179] mb-2">
-          <div className="bg-white border rounded-lg p-6">
               <h3 className="font-semibold text-[#214179] mb-2">Can I upgrade later?</h3>
               <p className="text-gray-700 text-sm">Absolutely! Most families start with the $20 package and upgrade to the full system once they see the value. We'll credit your original purchase.</p>
             </div>
@@ -1234,7 +1208,7 @@ export default function ProductPage() {
             </p>
           </div>
         </footer>
-      </div>
+ </div>
     </>
   );
 }
